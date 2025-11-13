@@ -18,4 +18,3 @@ def register(request):
         return redirect('index')
 
     return render(request, template_name="register.html")
-
