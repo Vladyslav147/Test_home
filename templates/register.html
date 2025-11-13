@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>О да привет</h1>
+
+    <div class="container">
+        <h2>Регистрация</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Имя" required> <!-- required=Обезательное поле- -->
+            <input type="number" name="phone" placeholder="Номер телефона" required>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+{% endblock content %}
