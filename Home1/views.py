@@ -14,10 +14,22 @@ def register(request):
         user_email = request.POST.get('email')
 
         UserProfile.objects.create(name = user_name, phone = user_phone, email = user_email)
+        return redirect('index')
     return render(request, template_name="register.html")
 
+
 def users(request):
-    return render(request, template_name="users.html")
+    all_users = UserProfile.objects.all()
+    contex = {
+        'users': all_users
+    }
+    return render(request, template_name="users.html", context=contex)
+
+
+
+
+
+
 
 """
 def register(request):

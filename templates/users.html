@@ -12,9 +12,23 @@
                     <th>Email</th>
                 </tr>
             </thead>
+
             <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.phone }}</td>
+                    <td>{{ user.email }}</td>
+                </tr>
+                {% endfor %}
             </tbody>
+
         </table>
+
+        {% if not users %}
+            <p style="text-align: center; margin-top: 20px;">пока нет зарегистрированных пользователей.</p>
+        {% endif %}
+
     </main>
 
     <footer>
