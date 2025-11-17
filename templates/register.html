@@ -4,8 +4,8 @@
 
     <main class="container">
         <h2>✏️ Форма Регистрации</h2>
-        <form action="/api/register" method="POST">
-            
+        <form action="/register" method="POST">
+            {% csrf_token %}
             <div class="form-group">
                 <label for="name">Имя:</label>
                 <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
